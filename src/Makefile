@@ -22,15 +22,11 @@ uninstall:
 	@rm -rf ../build
 	@echo "Uninstall completed!"
 	
-dvi:
-	open ../README_RUS.md
-	
 dist: 
 	@mkdir -p ../dist
 	@cp -R ../build/$(TARGET).app ../dist
-	@cp ../README_RUS.md ../dist 
 	@cd ../dist && tar cvzf $(TARGET).tgz *
-	@cd ../dist && rm -rf $(TARGET).app README_RUS.md
+	@cd ../dist && rm -rf $(TARGET).app
 	@echo "Archive creation completed successfully!"
 
 test: s21_polish.a
